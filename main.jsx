@@ -1,78 +1,36 @@
-function calculateResult(){
+function changeText(){
 
-    let subjects =
-        document.getElementById("subjects").value;
+    let msg =
+        document.getElementById("message").value;
 
-    let total = 0;
+    document.getElementById("heading").innerHTML = msg;
+}
 
-    // Loop for taking marks
+function changeColor(){
 
-    for(let i = 1; i <= subjects; i++){
+    document.body.style.backgroundColor = "lightblue";
+}
 
-        let marks = parseInt(
+function changeFont(){
 
-            prompt(
-                "Enter marks for Subject " + i
-            )
-        );
+    document.getElementById("heading").style.fontSize =
+        "50px";
+}
 
-        total = total + marks;
-    }
+function togglePara(){
 
-    // Calculate average
+    let para = document.getElementById("para");
 
-    let average = total / subjects;
-
-    let grade = "";
-
-    let result = "";
-
-    // Conditions
-
-    if(average >= 90){
-
-        grade = "A+";
-
-        result = "Pass";
-    }
-
-    else if(average >= 75){
-
-        grade = "A";
-
-        result = "Pass";
-    }
-
-    else if(average >= 60){
-
-        grade = "B";
-
-        result = "Pass";
-    }
-
-    else if(average >= 40){
-
-        grade = "C";
-
-        result = "Pass";
+    if(para.style.display == "none"){
+        para.style.display = "block";
     }
 
     else{
-
-        grade = "F";
-
-        result = "Fail";
+        para.style.display = "none";
     }
+}
 
-    // Display Result
+function resetPage(){
 
-    document.getElementById("result").innerHTML =
-
-        "<h3>Total Marks : " + total + "</h3>" +
-
-        "<h3>Average : " + average + "</h3>" +
-
-        "<h3>Grade : " + grade + "</h3>" +
-
-        "<h3>Result : " + result + "</h3>";
+    location.reload();
 }
